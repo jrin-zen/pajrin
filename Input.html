@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Up</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Top-Up Game</h1>
+        <form id="topUpForm" method="POST" onsubmit="redirectToThankYou(event)">
+            <label for="amount">Jumlah Top-Up:</label>
+            <select id="amount" name="amount" required>
+                <option value="" disabled selected>berapa diamond</option>
+                <option value="10000">Rp10.000 = 50 DM</option>
+                <option value="50000">Rp50.000 = 265 DM</option>
+                <option value="100000">Rp100.000 = 515 DM</option>
+                <option value="200000">Rp200.000 = 1.015 DM</option>
+                <option value="500000">Rp500.000 = 2.515 DM</option>
+            </select>
+
+            <label for="method">Metode Pembayaran:</label>
+            <select id="method" name="method" required>
+                <option value="" disabled selected>metode pembayaran</option>
+                <option value="bank">Dana</option>
+                <option value="ewallet">Gopay</option>
+                <option value="credit">indomaret/alfamart</option>
+            </select>
+
+            <button type="submit">Pesan</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToThankYou(event) {
+            event.preventDefault(); // Mencegah form dari submit default
+            // Redirect ke makasih.html setelah form di-submit
+            window.location.href = "makasih.html";
+        }
+    </script>
+</body>
+</html>
